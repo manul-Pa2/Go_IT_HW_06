@@ -42,7 +42,6 @@ def main():
     while True:
         user_input = input("Enter a command: ")
 
-        # розбір введення
         try:
             command, *args = parse_input(user_input)
         except ValueError:                # (наприклад, якщо введено порожній рядок)
@@ -62,8 +61,7 @@ def main():
             except ValueError:
                 print("Invalid command.")
 
-        elif command == "change":
-            # очікуємо: change <name> <phone>
+        elif command == "change":       # модливість change <name> <phone>
             try:
                 print(change_contact(args, contacts))
             except ValueError:
